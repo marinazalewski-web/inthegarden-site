@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Garden — The Bloom Project</title>
+<meta name="description" content="The Garden is where The Bloom Project's idea keeps growing between projects. A commitment to living by the golden rule is all it takes to join.">
+<meta property="og:title" content="The Garden — The Bloom Project">
+<meta property="og:description" content="A commitment to living by the golden rule is all it takes to join — updates on the mural, new projects, meetups, and pop-up events.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#A5E6FF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#153543" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 132'%3E%3Cpath d='M64,84 L64,122' fill='none' stroke='%23525D2B' stroke-width='6'/%3E%3Cpath d='M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z' fill='%23DF9AB9'/%3E%3Cpath d='M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z' fill='%23DF9AB9'/%3E%3Cpath d='M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z' fill='%23DF9AB9'/%3E%3Ccircle cx='64' cy='83' r='12' fill='%23C6953A'/%3E%3Ccircle cx='64' cy='83' r='8' fill='%23F9DB51'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rose-deep:#B9678C; --gold:#F9DB51; --amber:#C6953A;
+    --ground:#FFFBF5; --panel:#FFFFFF; --text:#22303A; --text-soft:#5A646E;
+    --rule:#E8DED4; --eyebrow:#8A7A6C; --link:#0E5C7F; --hero:#A5E6FF; --hero-ink:#22303A;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",serif;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --maxw:40rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
+      --rule:#2E4652;--eyebrow:#8FA9B3;--link:#A5E6FF;--hero:#153543;--hero-ink:#EDF4F6}
+  }
+  :root[data-theme="dark"]{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
+    --rule:#2E4652;--eyebrow:#8FA9B3;--link:#A5E6FF;--hero:#153543;--hero-ink:#EDF4F6}
+  :root[data-theme="light"]{--ground:#FFFBF5;--panel:#FFFFFF;--text:#22303A;--text-soft:#5A646E;
+    --rule:#E8DED4;--eyebrow:#8A7A6C;--link:#0E5C7F;--hero:#A5E6FF;--hero-ink:#22303A}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--text);font-family:var(--sans);
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+  h1,h2{font-family:var(--serif);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.015em}
+  p{margin:0}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--rose-deep);outline-offset:3px;border-radius:3px}
+  .lede{color:var(--text-soft);font-size:1.06rem}
+
+  nav{padding:1rem 0;border-bottom:1px solid var(--rule)}
+  nav .wrap{display:flex;align-items:center;gap:.6rem}
+  nav svg{height:28px;width:auto}
+  nav a.back{margin-left:auto;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--text-soft)}
+  nav a.back:hover{color:var(--link)}
+
+  header.hero{background:var(--hero);color:var(--hero-ink);text-align:center;padding:4rem 0 3.5rem}
+  header.hero .mark{margin:0 auto 1.25rem;height:72px;width:auto;display:block}
+  .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--eyebrow);font-weight:600}
+  header.hero .eyebrow{color:var(--hero-ink);opacity:.7}
+  header.hero h1{font-size:clamp(1.9rem,5vw,2.6rem);margin-top:.75rem}
+  header.hero .lede{margin:1.1rem auto 0;color:var(--hero-ink);opacity:.85}
+
+  section{padding:3.5rem 0;border-top:1px solid var(--rule)}
+  .sechead{display:grid;gap:.6rem;margin-bottom:1.5rem}
+  .sechead h2{font-size:clamp(1.4rem,3vw,1.8rem)}
+
+  .join{background:var(--panel);border:1px solid var(--rule);border-radius:16px;padding:2rem}
+  .join form{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.25rem}
+  .join input[type="email"]{flex:1;min-width:12rem;padding:.75rem 1rem;border-radius:999px;
+    border:1.5px solid var(--rule);background:var(--ground);color:var(--text);font-size:.95rem}
+  .btn{display:inline-block;background:var(--gold);color:#22303A;text-decoration:none;
+    font-weight:700;font-size:.92rem;padding:.65rem 1.4rem;border-radius:999px;
+    border:1.5px solid #DFBB2C;cursor:pointer;transition:transform .12s ease}
+  .btn:hover{transform:translateY(-1px)}
+  @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+  .confirm{display:none;margin-top:1rem;font-size:.9rem;color:var(--text-soft)}
+
+  footer{border-top:1px solid var(--rule);padding:2rem 0;color:var(--text-soft);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <svg viewBox="0 0 128 132" role="img" aria-label="The Bloom Project">
+      <path d="M64,84 L64,122" fill="none" stroke="#525D2B" stroke-width="5" stroke-linecap="round"/>
+      <path d="M64,101 C59.39,111.43 49.2,116.03 39.74,107.05 C43.87,94.68 55.03,93.96 64,101Z" fill="#A1BC50"/>
+      <path d="M64,101 C72.97,93.96 84.13,94.68 88.26,107.05 C78.8,116.03 68.61,111.43 64,101Z" fill="#A1BC50"/>
+      <path d="M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z" fill="#DF9AB9"/>
+      <path d="M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z" fill="#DF9AB9"/>
+      <path d="M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z" fill="#DF9AB9"/>
+      <circle cx="64" cy="83" r="12" fill="#C6953A"/>
+      <circle cx="64" cy="83" r="8" fill="#F9DB51"/>
+    </svg>
+    <a class="back" href="index.html#shop">&larr; The Bloom Project</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="mark" viewBox="0 0 128 132" role="img" aria-label="The Bloom Project">
+    <path d="M64,84 L64,122" fill="none" stroke="#525D2B" stroke-width="5" stroke-linecap="round"/>
+    <path d="M64,101 C59.39,111.43 49.2,116.03 39.74,107.05 C43.87,94.68 55.03,93.96 64,101Z" fill="#A1BC50"/>
+    <path d="M64,101 C72.97,93.96 84.13,94.68 88.26,107.05 C78.8,116.03 68.61,111.43 64,101Z" fill="#A1BC50"/>
+    <path d="M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z" fill="#DF9AB9"/>
+    <path d="M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z" fill="#DF9AB9"/>
+    <path d="M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z" fill="#DF9AB9"/>
+    <circle cx="64" cy="83" r="12" fill="#C6953A"/>
+    <circle cx="64" cy="83" r="8" fill="#F9DB51"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Welcome to the Garden</span>
+    <h1>You're already someone's reason to bloom.</h1>
+    <p class="lede">The Garden is where The Bloom Project's idea keeps growing between
+      projects — a place to practice the golden rule on purpose, together. Right now, that
+      means backing a real mural going up on Madison's east side, painted by the kids who
+      live there. Everywhere else, it means the same simple thing: reach toward your
+      neighbor, and grow something together.</p>
+  </div>
+</header>
+
+<section id="what">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>What joining actually means</h2>
+    </div>
+    <p class="lede">A commitment to living by the golden rule is all it takes — it gets you
+      into our members database and, soon, our WhatsApp group, where the Garden actually
+      happens. Add a donation of any kind, and we'll send a welcome pack your way. No
+      minimum, no belief test — just the intention, shared.</p>
+  </div>
+</section>
+
+<section id="golden-rule">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>Living by the golden rule</h2>
+    </div>
+    <p class="lede">Simply: treat others the way you'd want to be treated — starting with
+      yourself, so it has somewhere to grow from. In practice, that looks like:</p>
+    <ul style="margin-top:1rem;padding-left:1.2rem;color:var(--text-soft);line-height:1.9;font-size:1.06rem;">
+      <li>Loving yourself first, so you have something left to give</li>
+      <li>Looking the next person in the eye like they matter — because they do</li>
+      <li>Showing up in small, ordinary ways: a nod, a meal, a ride, a listening ear</li>
+      <li>Standing up for others the way you'd want someone to stand up for you</li>
+    </ul>
+    <p class="lede" style="margin-top:1rem;">That's it. No perfect track record required —
+      just the intention, practiced on purpose, starting today.</p>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="join">
+      <div class="sechead">
+        <h2>Join the Garden</h2>
+      </div>
+      <p class="lede">Leave your email, and consider yourself part of it — updates on the
+        mural, new projects, meetups, and pop-up events. Nothing else, promise.</p>
+      <form onsubmit="event.preventDefault(); document.getElementById('confirm').style.display='block'; this.reset();">
+        <label class="sr-only" for="garden-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+        <input id="garden-email" type="email" required placeholder="you@example.com">
+        <button class="btn" type="submit">Join</button>
+      </form>
+      <p id="confirm" class="confirm">Welcome to the Garden — you're in. <!-- FILL IN: wire this form to a real email service (Mailchimp, Squarespace, etc.); it does not send anywhere yet --></p>
+      <p style="margin-top:1.25rem;font-size:.9rem;color:var(--text-soft);">Want to give
+        directly, too? <a href="give.html">Support the mural &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 The Bloom Project. A 501(c)(3) nonprofit. Madison, WI.
+  </div>
+</footer>
+
+</body>
+</html>

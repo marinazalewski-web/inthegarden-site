@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Give to the Mural — The Bloom Project</title>
+<meta name="description" content="Give to the DAMA x Bloom mural — a 501(c)(3) donation that funds paint, panels, and the young artists painting them.">
+<meta property="og:title" content="Give to the Mural — The Bloom Project">
+<meta property="og:description" content="A 501(c)(3) donation that funds paint, panels, and the young artists painting the DAMA x Bloom mural.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#A5E6FF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#153543" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 132'%3E%3Cpath d='M64,84 L64,122' fill='none' stroke='%23525D2B' stroke-width='6'/%3E%3Cpath d='M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z' fill='%23DF9AB9'/%3E%3Cpath d='M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z' fill='%23DF9AB9'/%3E%3Cpath d='M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z' fill='%23DF9AB9'/%3E%3Ccircle cx='64' cy='83' r='12' fill='%23C6953A'/%3E%3Ccircle cx='64' cy='83' r='8' fill='%23F9DB51'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rose-deep:#B9678C; --gold:#F9DB51; --amber:#C6953A; --leaf:#A1BC50;
+    --ground:#FFFBF5; --panel:#FFFFFF; --text:#22303A; --text-soft:#5A646E;
+    --rule:#E8DED4; --eyebrow:#8A7A6C; --link:#0E5C7F; --hero:#A5E6FF; --hero-ink:#22303A;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",serif;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --maxw:40rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
+      --rule:#2E4652;--eyebrow:#8FA9B3;--link:#A5E6FF;--hero:#153543;--hero-ink:#EDF4F6}
+  }
+  :root[data-theme="dark"]{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
+    --rule:#2E4652;--eyebrow:#8FA9B3;--link:#A5E6FF;--hero:#153543;--hero-ink:#EDF4F6}
+  :root[data-theme="light"]{--ground:#FFFBF5;--panel:#FFFFFF;--text:#22303A;--text-soft:#5A646E;
+    --rule:#E8DED4;--eyebrow:#8A7A6C;--link:#0E5C7F;--hero:#A5E6FF;--hero-ink:#22303A}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--text);font-family:var(--sans);
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+  h1,h2{font-family:var(--serif);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.015em}
+  p{margin:0}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--rose-deep);outline-offset:3px;border-radius:3px}
+  .lede{color:var(--text-soft);font-size:1.06rem}
+
+  nav{padding:1rem 0;border-bottom:1px solid var(--rule)}
+  nav .wrap{display:flex;align-items:center;gap:.6rem}
+  nav svg{height:28px;width:auto}
+  nav a.back{margin-left:auto;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--text-soft)}
+  nav a.back:hover{color:var(--link)}
+
+  header.hero{background:var(--hero);color:var(--hero-ink);text-align:center;padding:3.5rem 0 3rem}
+  header.hero .mark{margin:0 auto 1.25rem;height:64px;width:auto;display:block}
+  .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--eyebrow);font-weight:600}
+  header.hero .eyebrow{color:var(--hero-ink);opacity:.7}
+  header.hero h1{font-size:clamp(1.9rem,5vw,2.6rem);margin-top:.75rem}
+  header.hero .lede{margin:1.1rem auto 0;color:var(--hero-ink);opacity:.85}
+
+  .progress{margin-top:1.5rem}
+  .progress-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem;flex-wrap:wrap;gap:.4rem}
+  .progress .raised{font-family:var(--serif);font-size:1.2rem;color:var(--hero-ink)}
+  .progress .remaining{font-family:var(--serif);font-size:1.2rem;color:var(--rose-deep)}
+  .progress .goal{color:var(--hero-ink);opacity:.75;font-size:.85rem}
+  .progress .goal-line{margin-top:.6rem;color:var(--hero-ink);opacity:.75;font-size:.85rem}
+  .bar{height:10px;border-radius:999px;background:rgba(34,48,58,.15);overflow:hidden}
+  .bar-fill{height:100%;background:var(--amber);border-radius:999px}
+
+  section{padding:3rem 0;border-top:1px solid var(--rule)}
+  .sechead{display:grid;gap:.6rem;margin-bottom:1.25rem}
+  .sechead h2{font-size:clamp(1.3rem,3vw,1.6rem)}
+
+  .give-panel{background:var(--panel);border:1px solid var(--rule);border-radius:16px;padding:1.75rem}
+  .give-panel + .give-panel{margin-top:1.25rem}
+  .give-panel h3{font-family:var(--serif);font-weight:400;font-size:1.15rem;margin:0 0 .5rem}
+  .give-panel p{color:var(--text-soft);font-size:.95rem}
+  .embed-slot{margin-top:1.25rem;padding:2rem 1rem;border:1.5px dashed var(--rule);border-radius:12px;
+    text-align:center;color:var(--eyebrow);font-size:.85rem;background:var(--ground)}
+
+  .btn{display:inline-block;background:var(--gold);color:#22303A;text-decoration:none;
+    font-weight:700;font-size:.92rem;padding:.65rem 1.4rem;border-radius:999px;
+    border:1.5px solid #DFBB2C;transition:transform .12s ease}
+  .btn:hover{transform:translateY(-1px)}
+  @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+  .btn-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
+  .btn.disabled{background:var(--rule);border-color:var(--rule);color:var(--text-soft);
+    cursor:default;pointer-events:none}
+  .btn.disabled:hover{transform:none}
+
+  footer{border-top:1px solid var(--rule);padding:2rem 0;color:var(--text-soft);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <svg viewBox="0 0 128 132" role="img" aria-label="The Bloom Project">
+      <path d="M64,84 L64,122" fill="none" stroke="#525D2B" stroke-width="5" stroke-linecap="round"/>
+      <path d="M64,101 C59.39,111.43 49.2,116.03 39.74,107.05 C43.87,94.68 55.03,93.96 64,101Z" fill="#A1BC50"/>
+      <path d="M64,101 C72.97,93.96 84.13,94.68 88.26,107.05 C78.8,116.03 68.61,111.43 64,101Z" fill="#A1BC50"/>
+      <path d="M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z" fill="#F0C6D6"/>
+      <path d="M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z" fill="#DF9AB9"/>
+      <path d="M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z" fill="#DF9AB9"/>
+      <path d="M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z" fill="#DF9AB9"/>
+      <circle cx="64" cy="83" r="12" fill="#C6953A"/>
+      <circle cx="64" cy="83" r="8" fill="#F9DB51"/>
+    </svg>
+    <a class="back" href="index.html#give">&larr; The Bloom Project</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="mark" viewBox="0 0 128 132" role="img" aria-label="The Bloom Project">
+    <path d="M64,84 L64,122" fill="none" stroke="#525D2B" stroke-width="5" stroke-linecap="round"/>
+    <path d="M64,101 C59.39,111.43 49.2,116.03 39.74,107.05 C43.87,94.68 55.03,93.96 64,101Z" fill="#A1BC50"/>
+    <path d="M64,101 C72.97,93.96 84.13,94.68 88.26,107.05 C78.8,116.03 68.61,111.43 64,101Z" fill="#A1BC50"/>
+    <path d="M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z" fill="#F0C6D6"/>
+    <path d="M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z" fill="#DF9AB9"/>
+    <path d="M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z" fill="#DF9AB9"/>
+    <path d="M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z" fill="#DF9AB9"/>
+    <circle cx="64" cy="83" r="12" fill="#C6953A"/>
+    <circle cx="64" cy="83" r="8" fill="#F9DB51"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Support the Mural</span>
+    <h1>Give to the mural</h1>
+    <p class="lede">Our first collaboration is with the DAMA Youth Apprenticeship Summer
+      Program — local teens ages 14&ndash;17 earning $15/hr to learn, design, and paint
+      alongside professional artists. Every gift funds the paint, the panels, and the
+      young artists bringing this mural from seed to bloom.</p>
+
+    <div class="progress">
+      <div class="progress-row">
+        <span class="raised">$450 raised</span>
+        <span class="remaining">$750 still needed</span>
+      </div>
+      <div class="bar" role="progressbar" aria-label="Funds raised toward the mural goal"
+        aria-valuenow="450" aria-valuemin="0" aria-valuemax="1200">
+        <div class="bar-fill" style="width:38%"></div>
+      </div>
+      <p class="goal-line">$1,200 goal &middot; needed by end of summer</p>
+    </div>
+  </div>
+</header>
+
+<section id="donate">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>Choose how to give</h2>
+    </div>
+
+    <div class="give-panel">
+      <h3>Credit card, Venmo &amp; PayPal</h3>
+      <p>Online giving is on its way — check back soon, or use the option below in the meantime.</p>
+      <div class="btn-row">
+        <span class="btn disabled" aria-disabled="true">Credit card — coming soon</span>
+        <span class="btn disabled" aria-disabled="true">Venmo — coming soon</span>
+        <span class="btn disabled" aria-disabled="true">PayPal — coming soon</span>
+      </div>
+    </div>
+
+    <div class="give-panel">
+      <h3>Prefer to give by check?</h3>
+      <p>Make it payable to <strong>The Bloom Project, Inc.</strong> and mail it to:</p>
+      <p style="margin-top:.75rem;font-family:var(--serif);color:var(--text);">
+        The Bloom Project, Inc.<br>
+        211 Owen Rd #6102<br>
+        Monona, WI 53716
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 The Bloom Project. A 501(c)(3) nonprofit. Madison, WI. &middot; Planting seeds of joy.
+  </div>
+</footer>
+
+</body>
+</html>
