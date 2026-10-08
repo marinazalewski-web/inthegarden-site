@@ -109,6 +109,22 @@
   .photos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
   .photos-grid .photo{margin-top:0}
   @media (max-width:700px){.photos-grid{grid-template-columns:1fr}}
+  .work-photos .photo img{aspect-ratio:4/3}
+  .work-photos .photo.tall img{object-position:center top}
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));
+    gap:1.5rem;margin-top:2rem}
+  .project{border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--panel);
+    display:flex;flex-direction:column}
+  .project-img{margin:0}
+  .project-img img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .project-body{padding:1.1rem 1.25rem 1.4rem;display:grid;gap:.55rem;align-content:start}
+  .badge{justify-self:start;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:600;padding:.3rem .7rem;border-radius:999px;background:var(--leaf);color:#22303A}
+  .badge.next{background:transparent;border:1px dashed var(--rule);color:var(--text-soft)}
+  .project h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;line-height:1.3}
+  .project p{font-size:.95rem;color:var(--text-soft);line-height:1.65}
+  .project-meta{font-size:.8rem;color:var(--eyebrow)}
+  .project.placeholder{border-style:dashed;background:transparent}
 
   .callout{margin-top:2rem;padding:1.25rem 1.5rem;border-radius:14px;background:var(--panel);
     border:1px solid var(--rule);border-left:4px solid var(--amber)}
@@ -147,7 +163,6 @@
     <a class="nl" href="#give">Give</a>
     <a class="nl" href="#shop">The Garden</a>
     <a class="nl" href="#contact">Contact</a>
-    <a class="btn" href="garden.html">Enter the Garden</a>
   </div>
 </nav>
 
@@ -206,15 +221,62 @@
 <section id="work">
   <div class="wrap">
     <div class="sechead">
-      <h2>Our First Bloom: The DAMA Summer Mural Project</h2>
+      <span class="eyebrow">Our Work</span>
+      <h2>Projects</h2>
     </div>
-    <p class="lede">We will always be proud that our very first collaboration was with the Dane Arts Mural
-      Arts (DAMA) Youth Apprenticeship Summer Program! Under the guidance of local artist Emily
-      Rodriguez at DAMA headquarters, local youth ages 14–17 earned a paid wage ($15/hr) to
-      learn, design, and paint alongside the pros. Together, they created a public mural that
-      blossoms, panel by panel, from seed to bloom. It is about so much more than paint — it is
-      about equipping kids with real-world skills, teamwork, and the confidence to make their own
-      corners of the world a little sweeter.</p>
+    <p class="lede">We build these one at a time. Each one starts the same way — someone notices a
+      corner of the world that could be a little warmer, and we go do something about it.</p>
+
+    <div class="projects">
+      <article class="project">
+        <figure class="project-img">
+          <!-- SLOT: swap for a photograph of the finished wall as soon as one exists.
+               This is the design rendering, not the built mural. -->
+          <img loading="lazy" decoding="async" width="1400" height="787"
+            src="images/mural-rendering.jpg"
+            alt="Design rendering of five mural panels — seed to bloom — mounted above the storefront at 825 E Johnson St.">
+        </figure>
+        <div class="project-body">
+          <span class="badge">Completed &middot; 2026</span>
+          <h3>Our First Bloom: The DAMA Summer Mural</h3>
+          <p>We will always be proud that our very first collaboration was with the Dane Arts Mural
+            Arts (DAMA) Youth Apprenticeship Summer Program. Under the guidance of local artist
+            Emily Rodriguez at DAMA headquarters, local youth ages 14&ndash;17 earned a paid wage
+            ($15/hr) to learn, design, and paint alongside the pros. Together they created a public
+            mural that blossoms, panel by panel, from seed to bloom &mdash; so much more than paint.
+            It is about equipping kids with real-world skills, teamwork, and the confidence to make
+            their own corners of the world a little sweeter.</p>
+          <p class="project-meta">825 E Johnson St, Madison &middot; with Dane Arts Mural Arts<br>
+            Shown above: the design rendering. Photographs of the finished wall are on their way.</p>
+        </div>
+      </article>
+
+      <article class="project placeholder">
+        <div class="project-body">
+          <span class="badge next">Next</span>
+          <h3>The next wall</h3>
+          <p>The first one is painted and mounted. The next starts from scratch &mdash; a surface,
+            paint that survives a Wisconsin winter, and a group of teenagers getting paid to learn
+            how to use it. If you want to help put it up, that is where giving goes now.</p>
+          <p class="project-meta"><a href="#give">Fund the next wall &rarr;</a></p>
+        </div>
+      </article>
+    </div>
+
+    <div class="photos-grid work-photos">
+      <figure class="photo">
+        <img loading="lazy" decoding="async" width="1400" height="647"
+          src="images/dama-building.jpg"
+          alt="The exterior of DAMA headquarters on Allis Avenue, a low blue-and-black building with its sign above the door.">
+        <figcaption>DAMA headquarters on Allis Ave &mdash; where the panels were designed and painted.</figcaption>
+      </figure>
+      <figure class="photo tall">
+        <img loading="lazy" decoding="async" width="1400" height="3030"
+          src="images/dama-studio.jpg"
+          alt="Inside the DAMA studio: a hand-painted WELCOME sign on a blue sky mural above a supply cart.">
+        <figcaption>Inside the studio. The welcome on the wall is DAMA&rsquo;s own, and it sets the tone.</figcaption>
+      </figure>
+    </div>
     <svg class="cycle" viewBox="0 0 800 210" role="img" aria-label="Seed to bloom growth cycle">
       <path d="M20,178 C120,170 180,184 300,177 C420,170 500,184 620,177 C700,172 750,180 780,177"
             fill="none" stroke="#7A5540" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
@@ -285,15 +347,11 @@
 <section id="shop">
   <div class="wrap">
     <div class="sechead">
-      <span class="eyebrow">Stay Up To Date</span>
       <h2>Welcome to the Garden</h2>
     </div>
     <p class="lede">A commitment to living by the golden rule is all it takes — it gets you into
       our members database and our eventual WhatsApp group. A donation of any kind sends you a
       welcome pack.</p>
-    <p style="margin-top:1.5rem;">
-      <a class="btn" href="garden.html">Enter the Garden</a>
-    </p>
 
   </div>
 </section>
