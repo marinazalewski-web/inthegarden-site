@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us — The Bloom Project</title>
+<meta name="description" content="The Bloom Project started with friends having coffee every Thursday morning at La Brioche in Madison, wearing a shirt that said: there is someone here for you.">
+<meta property="og:title" content="About us — The Bloom Project">
+<meta property="og:description" content="It started with coffee on Thursday mornings, and a shirt that said: there is someone here for you.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#5FE0D2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#153543" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 132'%3E%3Cpath d='M64,84 L64,122' fill='none' stroke='%23525D2B' stroke-width='6'/%3E%3Cpath d='M64,84 C50.12,93.01 34.09,90.52 22.62,75.21 C39.33,65.87 54.99,70.12 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C47.52,82.56 36.41,70.73 36.81,51.6 C55.72,54.53 65.44,67.52 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C62.56,67.52 72.28,54.53 91.19,51.6 C91.59,70.73 80.48,82.56 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C73.01,70.12 88.67,65.87 105.38,75.21 C93.91,90.52 77.88,93.01 64,84Z' fill='%23F0C6D6'/%3E%3Cpath d='M64,84 C46.62,78.01 37.83,62.27 43.4,41.76 C62.99,50 69.99,66.62 64,84Z' fill='%23DF9AB9'/%3E%3Cpath d='M64,84 C51,71 50,53 64,37 C78,53 77,71 64,84Z' fill='%23DF9AB9'/%3E%3Cpath d='M64,84 C58.01,66.62 65.01,50 84.6,41.76 C90.17,62.27 81.38,78.01 64,84Z' fill='%23DF9AB9'/%3E%3Ccircle cx='64' cy='83' r='12' fill='%23C6953A'/%3E%3Ccircle cx='64' cy='83' r='8' fill='%23F9DB51'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --sky:#5FE0D2; --sky-deep:#08615A; --rose:#DF9AB9; --rose-lt:#F0C6D6; --rose-deep:#B9678C;
+    --blush:#F4D5C2; --gold:#F9DB51; --amber:#C6953A; --leaf:#A1BC50; --stem:#525D2B;
+    --soil:#7A5540; --ink:#22303A; --cream:#FFFBF5; --night:#12252E;
+
+    --ground:#FFFBF5; --panel:#FFFFFF; --text:#22303A; --text-soft:#5A646E;
+    --rule:#E8DED4; --eyebrow:#8A7A6C; --link:#08615A; --hero:#5FE0D2; --hero-ink:#22303A;
+
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",serif;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --maxw:56rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
+      --rule:#2E4652;--eyebrow:#8FA9B3;--link:#5FE0D2;--hero:#153543;--hero-ink:#EDF4F6}
+  }
+  :root[data-theme="dark"]{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
+    --rule:#2E4652;--eyebrow:#8FA9B3;--link:#5FE0D2;--hero:#153543;--hero-ink:#EDF4F6}
+  :root[data-theme="light"]{--ground:#FFFBF5;--panel:#FFFFFF;--text:#22303A;--text-soft:#5A646E;
+    --rule:#E8DED4;--eyebrow:#8A7A6C;--link:#08615A;--hero:#5FE0D2;--hero-ink:#22303A}
+
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--text);font-family:var(--sans);
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.015em}
+  p{margin:0}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--rose-deep);outline-offset:3px;border-radius:3px}
+  .skip-link{position:absolute;left:1rem;top:-3rem;background:var(--gold);color:#22303A;
+    padding:.6rem 1rem;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;
+    transition:top .15s ease;z-index:50}
+  .skip-link:focus{top:1rem}
+  section{padding:4rem 0;border-top:1px solid var(--rule);scroll-margin-top:5.5rem}
+  .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--eyebrow);font-weight:600}
+  .lede{max-width:38rem;color:var(--text-soft);font-size:1.06rem}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(255,251,245,.86);backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  :root[data-theme="dark"] nav{background:rgba(18,37,46,.86)}
+  @media (prefers-color-scheme:dark){nav{background:rgba(18,37,46,.86)}}
+  :root[data-theme="light"] nav{background:rgba(255,251,245,.86)}
+  nav .wrap{display:flex;align-items:center;gap:.6rem;padding-top:.85rem;padding-bottom:.85rem;flex-wrap:wrap}
+  nav svg{height:30px;width:auto}
+  nav .nm{font-family:var(--serif);font-weight:400;font-size:1.15rem;letter-spacing:-.015em;color:var(--text);margin-right:.8rem}
+  nav a.nl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    text-decoration:none;color:var(--text-soft)}
+  nav a.nl:first-of-type{margin-left:auto}
+  nav a.nl + a.nl{margin-left:1.4rem}
+  nav a.nl:hover,nav a.nl.active{color:var(--link)}
+  nav .btn{font-size:.7rem;padding:.4rem 1rem;margin-left:1.4rem}
+  @media (max-width:700px){
+    nav .nm{display:none}
+    nav a.nl{font-size:.66rem}
+    nav a.nl + a.nl{margin-left:1rem}
+    nav .btn{margin-left:1rem}
+  }
+
+  .btn{display:inline-block;background:var(--gold);color:#22303A;text-decoration:none;
+    font-weight:700;font-size:.92rem;padding:.65rem 1.4rem;border-radius:999px;
+    border:1.5px solid #DFBB2C;transition:transform .12s ease,box-shadow .12s ease}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(198,149,58,.35)}
+  .btn.ghost{background:transparent;color:var(--hero-ink);border-color:currentColor}
+  .btn.ghost:hover{box-shadow:none}
+  @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+
+  header.hero{background:var(--hero);color:var(--hero-ink);text-align:center}
+  header.hero .wrap{padding-top:3.5rem;padding-bottom:4rem}
+  header.hero .mark{margin:0 auto 1.25rem;height:72px;width:auto;display:block}
+  header.hero h1{font-size:clamp(2.1rem,5vw,3rem);max-width:30rem;margin:0 auto}
+  header.hero h1 em{font-style:italic}
+  header.hero .lede{margin:1.1rem auto 0;color:var(--hero-ink);opacity:.82}
+  header.hero .cta{margin-top:1.6rem;display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  .sechead{display:grid;gap:.6rem;margin-bottom:2rem}
+  .sechead h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+
+  .cycle{width:100%;height:auto;margin-top:1rem}
+
+  .progress{margin-top:1.75rem}
+  .progress-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem;flex-wrap:wrap;gap:.4rem}
+  .progress .raised{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+  .progress .remaining{font-family:var(--serif);font-size:1.3rem;color:var(--rose-deep)}
+  .progress .goal{color:var(--text-soft);font-size:.9rem}
+  .progress .goal-line{margin-top:.6rem;color:var(--text-soft);font-size:.9rem}
+  .bar{height:10px;border-radius:999px;background:var(--rule);overflow:hidden}
+  .bar-fill{height:100%;background:var(--gold);border-radius:999px}
+
+  .photo{margin:2rem 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--rule)}
+  .photo img{display:block;width:100%;height:auto;aspect-ratio:1400/647;object-fit:cover;object-position:center}
+  .photo figcaption{padding:.75rem 1rem;font-size:.85rem;color:var(--text-soft);background:var(--panel)}
+  .photos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+  .photos-grid .photo{margin-top:0}
+  @media (max-width:700px){.photos-grid{grid-template-columns:1fr}}
+  .years{display:grid;gap:3rem;margin-top:2.5rem}
+  .year-head{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;
+    padding-bottom:.7rem;border-bottom:1px solid var(--rule);margin-bottom:1.6rem}
+  .year-num{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.5rem);line-height:1;
+    color:var(--text)}
+  .year-tag{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--eyebrow);font-weight:600}
+  .proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.9rem;
+    align-items:center}
+  @media (max-width:760px){.proj{grid-template-columns:1fr;gap:1.1rem}}
+  .proj + .proj{margin-top:2rem}
+  .proj-media{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--rule)}
+  .proj-media img{display:block;width:100%;height:auto}
+  .proj-slot{border:1px dashed var(--rule);border-radius:14px;aspect-ratio:16/9;
+    display:grid;place-content:center;justify-items:center;gap:.4rem;padding:1.5rem}
+  .slot-logo{width:min(100%,19rem);height:auto;opacity:.92}
+  .proj-num{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--eyebrow);font-weight:600}
+  .proj h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.6rem);
+    line-height:1.25;margin:.45rem 0 .35rem}
+  .proj .with{font-size:.95rem;color:var(--text)}
+  .proj p{font-size:.95rem;color:var(--text-soft);line-height:1.7}
+  .proj p + p{margin-top:.7rem}
+  .pullquote{margin:1.1rem 0 0;padding:0 0 0 1.1rem;border-left:3px solid var(--rose-lt)}
+  .pullquote p{font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.6;
+    color:var(--text)}
+  .pullquote cite{display:block;margin-top:.6rem;font-family:var(--sans);font-style:normal;
+    font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow);
+    font-weight:600}
+  .credits{margin-top:1.5rem;font-size:.88rem;line-height:1.75;color:var(--text-soft)}
+  .dedication{margin-top:.9rem;font-family:var(--serif);font-size:1rem;color:var(--text)}
+
+  .callout{margin-top:2rem;padding:1.25rem 1.5rem;border-radius:14px;background:var(--panel);
+    border:1px solid var(--rule);border-left:4px solid var(--amber)}
+  .callout h3{font-size:1.05rem;margin-bottom:.4rem;color:var(--stem);font-family:var(--serif);font-weight:400}
+  .callout p{font-size:.95rem;color:var(--text-soft)}
+
+  footer{border-top:1px solid var(--rule);padding:2.5rem 0;color:var(--text-soft);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+<style>
+  .backlink{display:inline-block;margin-bottom:1.4rem;font-size:.78rem;letter-spacing:.1em;
+    text-transform:uppercase;font-weight:600;text-decoration:none;color:var(--text-soft)}
+  .backlink:hover{color:var(--link)}
+  .pagehead{padding:3rem 0 0}
+  .pagehead h1{font-size:clamp(2rem,5vw,2.9rem);max-width:18ch}
+  .pagehead .lede{margin-top:1.1rem}
+  .pull{margin:2rem 0 0;padding-left:1.2rem;border-left:3px solid var(--rose-lt)}
+  .pull p{font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.55;
+    color:var(--text)}
+  .doings{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.6rem;max-width:40rem}
+  .doings li{display:flex;gap:.8rem;font-size:.98rem;line-height:1.65;color:var(--text-soft)}
+  .doings li::before{content:"";flex:none;width:.5rem;height:.5rem;margin-top:.62rem;
+    border-radius:999px;background:var(--leaf)}
+  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));
+    gap:1.25rem;margin-top:1.8rem}
+  .founder{padding:1.1rem 1.25rem;border:1px solid var(--rule);border-radius:14px;
+    background:var(--panel)}
+  .founder h3{font-family:var(--serif);font-weight:400;font-size:1.1rem}
+  .founder p{margin-top:.3rem;font-size:.85rem;color:var(--text-soft)}
+  .closing{margin-top:1.6rem;display:flex;gap:.9rem;flex-wrap:wrap}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="backlink" href="index.html">&larr; The Bloom Project</a>
+    <span class="eyebrow">About us</span>
+    <h1>It started with coffee on Thursdays</h1>
+    <p class="lede">In 2026, a few friends started meeting every Thursday morning at La Brioche. We
+      wore the Bloom shirt on purpose, so that anyone who saw us would know what the table was for:
+      a safe haven of encouragement, for whoever needed it that week.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">The table</span>
+      <h2>Then people started sitting down</h2>
+    </div>
+    <p class="lede">Over time we had coffee with a lot of people who needed encouragement. Some we
+      knew already. Many we didn&rsquo;t. The shirt did the introducing, and the rest was just
+      showing up at the same place, at the same hour, week after week, so that we were easy to
+      find.</p>
+    <blockquote class="pull">
+      <p>A safe haven of encouragement, for whoever needed it.</p>
+    </blockquote>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">In practice</span>
+      <h2>Most of it never looks like a programme</h2>
+    </div>
+    <p class="lede">It looks like whatever the day asks for. Between us &mdash; the founders and our
+      friends &mdash; this is ordinary, not exceptional:</p>
+    <ul class="doings">
+      <li>Pulling over on the side of the highway to extend a helping hand</li>
+      <li>Giving rides to strangers who needed one</li>
+      <li>Pulling together a hotel room for someone with nowhere to sleep</li>
+      <li>Ubers, when the distance was the only thing in the way</li>
+      <li>Birthday cakes, so that the day did not pass unmarked</li>
+      <li>And a hundred other things that do not have a category</li>
+    </ul>
+    <p class="lede" style="margin-top:1.5rem;">None of that is a campaign. It is just what the week
+      turns up, and it is the same instinct that eventually became a mural.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Why bother</span>
+      <h2>Dane County is already kind. That is the point.</h2>
+    </div>
+    <p class="lede">Our community here is genuinely friendly and welcoming &mdash; we are not
+      arriving to fix anything. We just think a place that is already warm is the easiest place in
+      the world to make warmer, and that it is worth doing on purpose rather than by accident. We
+      believe we can do better, together.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Who we are</span>
+      <h2>Three friends, and the people who joined</h2>
+    </div>
+    <p class="lede">The Bloom Project took root in Monona, WI, on MLK Day in 2026, started by a
+      small circle of first-generation immigrant women, mothers, and friends &mdash; and the
+      life-changing power of two phrases: <em>&ldquo;j&aacute; deu certo&rdquo;</em> and
+      <em>&ldquo;whatever you need.&rdquo;</em></p>
+    <div class="founders">
+      <div class="founder">
+        <h3>Marina D C Zalewski</h3>
+        <p>Co-founder</p>
+      </div>
+      <div class="founder">
+        <h3>Luiza Paster</h3>
+        <p>Co-founder</p>
+      </div>
+      <div class="founder">
+        <h3>Jocelyn Tian</h3>
+        <p>Co-founder</p>
+      </div>
+    </div>
+    <p class="closing">
+      <a class="btn" href="index.html#work">See what we have built</a>
+      <a class="btn ghost" href="index.html#contact">Get in touch</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 The Bloom Project. A 501(c)(3) nonprofit. Madison, WI.</span>
+    <span>Planting seeds of joy.</span>
+  </div>
+</footer>
+
+</body>
+</html>
