@@ -155,14 +155,16 @@
   .pagehead{padding:3rem 0 0}
   .pagehead h1{font-size:clamp(2rem,5vw,2.9rem);max-width:22ch}
   .pagehead .lede{margin-top:1rem}
-  .wide{margin:2.5rem 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--rule)}
+  .wide{margin:2.5rem auto 0;max-width:42rem;border-radius:14px;overflow:hidden;
+    border:1px solid var(--rule)}
   .wide img{display:block;width:100%;height:auto}
   .wide figcaption{padding:.75rem 1rem;font-size:.85rem;color:var(--text-soft);background:var(--panel)}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));
-    gap:1.25rem;margin-top:2rem}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12.5rem),1fr));
+    gap:1rem;margin-top:2rem}
   .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--rule)}
   .gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-  .gallery figcaption{padding:.7rem .9rem;font-size:.82rem;color:var(--text-soft);background:var(--panel)}
+  .gallery figcaption{padding:.6rem .8rem;font-size:.78rem;line-height:1.5;
+    color:var(--text-soft);background:var(--panel)}
   .speech{margin-top:1.4rem;padding-left:1.2rem;border-left:3px solid var(--rose-lt)}
   .speech p{font-family:var(--serif);font-size:clamp(1.02rem,2vw,1.15rem);line-height:1.65;
     color:var(--text)}
@@ -260,10 +262,34 @@
     </div>
     <div class="gallery">
       <figure>
+        <img loading="lazy" decoding="async" width="1400" height="787"
+          src="images/mural-rendering.jpg"
+          alt="The original design rendering: five mural panels mocked up above the storefront at 825 E Johnson St.">
+        <figcaption>The design we started from.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" decoding="async" width="1000" height="507"
+          src="images/paint-day-a.jpg"
+          alt="Hands with brushes laying a blue base coat along a long panel on a trestle table in the grass.">
+        <figcaption>Base coat going on at Warner Park.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" decoding="async" width="1000" height="598"
+          src="images/paint-day-b.jpg"
+          alt="Several pairs of hands painting blue across a long white panel, brushes and paint pots scattered along it.">
+        <figcaption>Interns and neighbours, brush by brush.</figcaption>
+      </figure>
+      <figure>
         <img loading="lazy" decoding="async" width="1000" height="1169"
           src="images/mural-panel.jpg"
           alt="A finished panel propped on a wooden frame: a lotus flower in white, magenta and yellow on a bright blue ground.">
         <figcaption>One panel, finished and drying.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" decoding="async" width="900" height="1199"
+          src="images/mural-building.jpg"
+          alt="The full storefront at 825 E Johnson St from the pavement, the mural running in a band above the windows.">
+        <figcaption>The wall in its place on E Johnson St.</figcaption>
       </figure>
       <figure>
         <img loading="lazy" decoding="async" width="1400" height="647"
