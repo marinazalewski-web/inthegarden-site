@@ -184,6 +184,14 @@
     grid-template-columns:repeat(auto-fill,minmax(min(100%,11.5rem),1fr));gap:.4rem 1.1rem}
   .names li{font-size:.95rem;color:var(--text);line-height:1.5}
   .names li span{color:var(--text-soft);font-size:.85rem;display:block}
+  .story{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;gap:2.8rem}
+  .step-n{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--eyebrow);font-weight:600}
+  .step h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.2rem,2.3vw,1.45rem);
+    line-height:1.3;margin:.35rem 0 .55rem}
+  .step p{font-size:.98rem;line-height:1.75;color:var(--text-soft);max-width:38rem}
+  .step .gallery{margin-top:1.3rem}
+  .step .wide{margin-top:1.3rem}
 </style>
 
 </head>
@@ -216,7 +224,7 @@
   <div class="wrap">
     <div class="sechead">
       <span class="eyebrow">The hope</span>
-      <h2>That anyone walking past would feel seen</h2>
+      <h2>That anyone walking past would feel joy</h2>
     </div>
     <blockquote class="speech">
       <p>I wanted anyone walking past &mdash; even for just one second &mdash; to feel a spark of
@@ -265,59 +273,127 @@
 <section>
   <div class="wrap">
     <div class="sechead">
-      <span class="eyebrow">Along the way</span>
-      <h2>How it got made</h2>
+      <span class="eyebrow">How it got made</span>
+      <h2>From a conversation to a wall</h2>
     </div>
-    <div class="gallery">
-      <figure>
-        <img loading="lazy" decoding="async" width="1400" height="787"
-          src="images/mural-rendering.jpg"
-          alt="The original design rendering: five mural panels mocked up above the storefront at 825 E Johnson St.">
-        <figcaption>The design we started from.</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" width="1000" height="507"
-          src="images/paint-day-a.jpg"
-          alt="Hands with brushes laying a blue base coat along a long panel on a trestle table in the grass.">
-        <figcaption>Base coat going on at Warner Park.</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" width="1000" height="598"
-          src="images/paint-day-b.jpg"
-          alt="Several pairs of hands painting blue across a long white panel, brushes and paint pots scattered along it.">
-        <figcaption>Interns and neighbours, brush by brush.</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" width="1000" height="1169"
-          src="images/mural-panel.jpg"
-          alt="A finished panel propped on a wooden frame: a lotus flower in white, magenta and yellow on a bright blue ground.">
-        <figcaption>One panel, finished and drying.</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" width="900" height="1199"
-          src="images/mural-building.jpg"
-          alt="The full storefront at 825 E Johnson St from the pavement, the mural running in a band above the windows.">
-        <figcaption>The wall in its place on E Johnson St.</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" width="1400" height="647"
-          src="images/mural-sign.jpg"
-          alt="A hand-painted sign reading DAMA + Bloom Project Mural, 825 E Johnson, with a lotus flower painted beside the lettering.">
-        <figcaption>The hand-painted sign that travelled with the project.</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" width="1400" height="647"
-          src="images/dama-building.jpg"
-          alt="The exterior of DAMA headquarters on Allis Avenue, a low blue and black building with its sign above the door.">
-        <figcaption>DAMA headquarters on Allis Ave, where the panels were designed and painted.</figcaption>
-      </figure>
-      <figure class="top">
-        <img loading="lazy" decoding="async" width="1400" height="3030"
-          src="images/dama-studio.jpg"
-          alt="Inside the DAMA studio: a hand-painted WELCOME sign on a blue sky mural above a supply cart.">
-        <figcaption>Inside the studio. The welcome on the wall is DAMA&rsquo;s own.</figcaption>
-      </figure>
-    </div>
+    <p class="lede">It happened in order, over one summer, and almost none of it happened alone.</p>
+
+    <ol class="story">
+      <li class="step">
+        <span class="step-n">First</span>
+        <h3>A conversation about the vision</h3>
+        <p>We went to DAMA headquarters to talk with the artists about what this wall could be and
+          who it was for &mdash; and then got out of their way.</p>
+      </li>
+
+      <li class="step">
+        <span class="step-n">Then</span>
+        <h3>Three designs, and a choice</h3>
+        <p>They came back with three. One was chosen, and it became the thing that stands on E
+          Johnson today: panels reading seed to bloom, with watering cans at both ends pouring
+          inward, so growth moves toward the middle.</p>
+        <figure class="wide">
+          <img loading="lazy" decoding="async" width="1400" height="787"
+            src="images/mural-rendering.jpg"
+            alt="The chosen design, mocked up above the storefront at 825 E Johnson St: five panels of lotus flowers with watering cans at either end.">
+          <figcaption>The winning design, mocked up on the building.</figcaption>
+        </figure>
+      </li>
+
+      <li class="step">
+        <span class="step-n">Then</span>
+        <h3>Warner Park, and an open invitation</h3>
+        <p>The blank panels went to Parks Alive at Warner Park, where the neighbourhood was invited
+          to paint the background with us. Anyone who wanted a brush got one.</p>
+        <div class="gallery">
+          <figure>
+            <img loading="lazy" decoding="async" width="1200" height="1600"
+              src="images/warner-painting-1.jpg"
+              alt="People of all ages leaning over a long panel on trestle tables in a park, brushing blue paint across it.">
+            <figcaption>Laying in the sky, one brush at a time.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" width="1200" height="1600"
+              src="images/warner-painting-2.jpg"
+              alt="A crowd of young people and adults around two long tables, painting the blue background of the mural panels.">
+            <figcaption>Interns and neighbours, side by side.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" width="1200" height="554"
+              src="images/warner-kids.jpg"
+              alt="Children reaching across a panel with brushes while adults steady it, a park full of people behind them.">
+            <figcaption>No experience required.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" width="1200" height="1600"
+              src="images/warner-crowd.jpg"
+              alt="A large group gathered around the painting tables under trees at Warner Park, the hand-painted project sign propped at the end.">
+            <figcaption>The sign propped at the end of the table, telling people what it was for.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" width="1200" height="900"
+              src="images/warner-shirts.jpg"
+              alt="Project shirts being handed out from a cardboard box to a line of young people at the park.">
+            <figcaption>Shirts going out to the crew.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-n">Then</span>
+        <h3>Finishing at DAMA headquarters</h3>
+        <p>The detail work went back to the studio on Allis Ave &mdash; the flowers, the line work,
+          and the hundred small decisions that turn a painted background into a mural.</p>
+        <div class="gallery">
+          <figure>
+            <img loading="lazy" decoding="async" width="1000" height="1169"
+              src="images/mural-panel.jpg"
+              alt="A finished panel propped on a wooden frame: a lotus flower in white, magenta and yellow on a bright blue ground.">
+            <figcaption>One panel, finished and drying.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" width="1400" height="647"
+              src="images/dama-building.jpg"
+              alt="The exterior of DAMA headquarters on Allis Avenue, a low blue and black building with its sign above the door.">
+            <figcaption>DAMA headquarters on Allis Ave.</figcaption>
+          </figure>
+          <figure class="top">
+            <img loading="lazy" decoding="async" width="1400" height="3030"
+              src="images/dama-studio.jpg"
+              alt="Inside the DAMA studio: a hand-painted WELCOME sign on a blue sky mural above a supply cart.">
+            <figcaption>Inside the studio. The welcome on that wall is DAMA&rsquo;s own.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" width="1400" height="647"
+              src="images/mural-sign.jpg"
+              alt="A hand-painted sign reading DAMA + Bloom Project Mural, 825 E Johnson, with a lotus flower painted beside the lettering.">
+            <figcaption>The hand-painted sign that travelled with the project.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-n">Then</span>
+        <h3>Getting the wall ready</h3>
+        <p>Before anything could go up, the concrete had to be clean. A crew came with pressure
+          washers, and Dog Haus University next door lent us their spigot for the water. Two days of
+          disturbance on their doorstep, and not one complaint.</p>
+      </li>
+
+      <li class="step">
+        <span class="step-n">Finally</span>
+        <h3>The wall goes up</h3>
+        <p>Emily Larson Rodriguez and Veronica Figueroa Velez primed the wall and set the mural
+          fabric permanently on E Johnson. That was the moment it stopped being a project and
+          started being part of the street.</p>
+        <figure class="wide">
+          <img loading="lazy" decoding="async" width="900" height="1199"
+            src="images/mural-building.jpg"
+            alt="The full storefront at 825 E Johnson St seen from the pavement, the finished mural running in a band above the windows.">
+          <figcaption>825 E Johnson St, with the mural in place.</figcaption>
+        </figure>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -330,35 +406,43 @@
     <p class="lede">Every person who designed and painted From Seed to Bloom. Names appear exactly
       as each artist asked to be credited.</p>
 
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1400" height="647"
+        src="images/mural-interns.jpg"
+        alt="The project team outside DAMA headquarters, standing and kneeling in two rows against the building.">
+      <figcaption>The day we came to talk through the vision for the project with the artists. They
+        went away and came back with three designs.</figcaption>
+    </figure>
+
     <div class="namegroup">
       <span class="who">Youth artists &middot; ages 14&ndash;17</span>
       <ul class="names">
         <li>Airries</li>
-        <li>Laurielle B.</li>
-        <li>Ruth B.</li>
-        <li>Teresa Gam&oacute;n</li>
-        <li>Hannane G.</li>
-        <li>Sofia Garcia</li>
-        <li>Melanie H.</li>
-        <li>Genesis Hernandez</li>
-        <li>Javier M.</li>
-        <li>Umesh M.</li>
-        <li>Juan C. Ortiz</li>
         <li>Anlix Rojas</li>
-        <li>Delilah S.</li>
-        <li>Marlene Tamayo</li>
-        <li>Sheila T.</li>
-        <li>Oliver Taylor</li>
         <li>Dahana W.C.</li>
+        <li>Delilah S.</li>
+        <li>Genesis Hernandez</li>
+        <li>Hannane G.</li>
+        <li>Javier M.</li>
+        <li>Juan C. Ortiz</li>
+        <li>Laurielle B.</li>
+        <li>Marlene Tamayo</li>
+        <li>Melanie H.</li>
+        <li>Oliver Taylor</li>
+        <li>Ruth B.</li>
+        <li>Sheila T.</li>
+        <li>Sofia Garcia</li>
+        <li>Teresa Gam&oacute;n</li>
+        <li>Umesh M.</li>
       </ul>
     </div>
 
     <div class="namegroup">
       <span class="who">Young adult assistant artists &middot; ages 18&ndash;22</span>
       <ul class="names">
-        <li>Kylie Anderson</li>
-        <li>Jonny Escobar Holguin</li>
         <li>Demell Glenn</li>
+        <li>Jonny Escobar Holguin</li>
+        <li>Kylie Anderson</li>
       </ul>
     </div>
 
@@ -383,9 +467,9 @@
     <p class="credits">A seed is never alone &mdash; there is always someone pouring water into the
       earth. With thanks to <a href="https://damawi.org" target="_blank" rel="noopener">DAMA</a>
       and lead artist Emily Larson Rodriguez; the seventeen artists who painted it; Zaliuski LLC, our
-      donors and our grantors; the crew who pressure-washed the concrete before we started; our
-      neighbours at the doggie daycare, who lived through a summer of noise and dust; and everyone
-      who picked up a brush at Warner Park.</p>
+      donors and our grantors; the crew who pressure-washed the concrete before we started; Dog Haus
+      University next door, who lent us their spigot for the water and put up with two days of
+      disturbance; and everyone who picked up a brush at Warner Park.</p>
     <p class="dedication">Dedicated to every neighbour who calls Madison home.</p>
     <p style="margin-top:1.8rem;">
       <a class="btn" href="index.html#work">&larr; Back to all projects</a>
