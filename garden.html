@@ -17,18 +17,22 @@
     --rose-deep:#B9678C; --gold:#F9DB51; --amber:#C6953A;
     --ground:#FFFBF5; --panel:#FFFFFF; --text:#22303A; --text-soft:#5A646E;
     --rule:#E8DED4; --eyebrow:#8A7A6C; --link:#08615A; --hero:#5FE0D2; --hero-ink:#22303A;
+    --alert:#9C4B70;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",serif;
     --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
     --maxw:40rem;
   }
   @media (prefers-color-scheme:dark){
     :root{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
-      --rule:#2E4652;--eyebrow:#8FA9B3;--link:#5FE0D2;--hero:#153543;--hero-ink:#EDF4F6}
+      --rule:#2E4652;--eyebrow:#8FA9B3;--link:#5FE0D2;--hero:#153543;--hero-ink:#EDF4F6;
+      --alert:#F0AECA}
   }
   :root[data-theme="dark"]{--ground:#12252E;--panel:#1B303A;--text:#EDF4F6;--text-soft:#A8BEC6;
-    --rule:#2E4652;--eyebrow:#8FA9B3;--link:#5FE0D2;--hero:#153543;--hero-ink:#EDF4F6}
+    --rule:#2E4652;--eyebrow:#8FA9B3;--link:#5FE0D2;--hero:#153543;--hero-ink:#EDF4F6;
+    --alert:#F0AECA}
   :root[data-theme="light"]{--ground:#FFFBF5;--panel:#FFFFFF;--text:#22303A;--text-soft:#5A646E;
-    --rule:#E8DED4;--eyebrow:#8A7A6C;--link:#08615A;--hero:#5FE0D2;--hero-ink:#22303A}
+    --rule:#E8DED4;--eyebrow:#8A7A6C;--link:#08615A;--hero:#5FE0D2;--hero-ink:#22303A;
+    --alert:#9C4B70}
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--ground);color:var(--text);font-family:var(--sans);
@@ -59,15 +63,28 @@
   .sechead h2{font-size:clamp(1.4rem,3vw,1.8rem)}
 
   .join{background:var(--panel);border:1px solid var(--rule);border-radius:16px;padding:2rem}
-  .join form{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.25rem}
-  .join input[type="email"]{flex:1;min-width:12rem;padding:.75rem 1rem;border-radius:999px;
+  .join form{display:grid;gap:.9rem;margin-top:1.25rem}
+  .join .field{display:grid;gap:.3rem}
+  .join .field label{font-size:.78rem;color:var(--text-soft);padding-left:1.05rem}
+  .join input[type="email"]{width:100%;padding:.75rem 1rem;border-radius:999px;
     border:1.5px solid var(--rule);background:var(--ground);color:var(--text);font-size:.95rem}
+  .join input[aria-invalid="true"]{border-color:var(--alert)}
+  .join .btn{justify-self:start}
+  .join .suggest{display:none;font-size:.82rem;color:var(--text-soft);padding-left:1.05rem;margin-top:.15rem}
+  .join .suggest.is-visible{display:block}
+  .join .suggest button{background:none;border:0;padding:0;font:inherit;font-weight:600;
+    color:var(--link);text-decoration:underline;cursor:pointer}
   .btn{display:inline-block;background:var(--gold);color:#22303A;text-decoration:none;
     font-weight:700;font-size:.92rem;padding:.65rem 1.4rem;border-radius:999px;
     border:1.5px solid #DFBB2C;cursor:pointer;transition:transform .12s ease}
   .btn:hover{transform:translateY(-1px)}
   @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+  .btn[disabled]{opacity:.55;cursor:default}
+  .btn[disabled]:hover{transform:none}
   .confirm{display:none;margin-top:1rem;font-size:.9rem;color:var(--text-soft)}
+  .confirm.is-visible{display:block}
+  .confirm.is-error{color:var(--alert)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
   footer{border-top:1px solid var(--rule);padding:2rem 0;color:var(--text-soft);font-size:.85rem;text-align:center}
 </style>
@@ -158,12 +175,25 @@
       </div>
       <p class="lede">Leave your email, and consider yourself part of it — updates on the
         mural, new projects, meetups, and pop-up events. Nothing else, promise.</p>
-      <form onsubmit="event.preventDefault(); document.getElementById('confirm').style.display='block'; this.reset();">
-        <label class="sr-only" for="garden-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
-        <input id="garden-email" type="email" required placeholder="you@example.com">
-        <button class="btn" type="submit">Join</button>
+      <form id="garden-form" method="post" target="_blank" novalidate>
+        <div class="field">
+          <label for="garden-email">Email address</label>
+          <input id="garden-email" name="EMAIL" type="email" autocomplete="email" required placeholder="you@example.com">
+          <p id="suggest" class="suggest" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="garden-email-confirm">Confirm email address</label>
+          <input id="garden-email-confirm" type="email" autocomplete="email" required placeholder="Type it once more">
+        </div>
+        <!-- Mailchimp bot trap: real people never see or fill this. -->
+        <div class="hp" aria-hidden="true"><input id="garden-hp" type="text" name="b_" tabindex="-1" value="" autocomplete="off"></div>
+        <button id="garden-submit" class="btn" type="submit">Join</button>
       </form>
-      <p id="confirm" class="confirm">Welcome to the Garden — you're in. <!-- FILL IN: wire this form to a real email service (Mailchimp, Squarespace, etc.); it does not send anywhere yet --></p>
+      <p id="confirm" class="confirm" role="status" aria-live="polite"></p>
+      <noscript>
+        <p class="confirm is-visible">Signing up needs JavaScript. Email
+          <a href="mailto:marina@inthegarden.org">marina@inthegarden.org</a> and we'll add you by hand.</p>
+      </noscript>
       <p style="margin-top:1.25rem;font-size:.9rem;color:var(--text-soft);">Want to give
         directly, too? <a href="give.html">Support the mural &rarr;</a></p>
     </div>
@@ -175,6 +205,239 @@
     &copy; 2026 The Bloom Project. A 501(c)(3) nonprofit. Madison, WI.
   </div>
 </footer>
+
+<script>
+(function(){
+  /* ── FILL IN ──────────────────────────────────────────────────────────────
+     Paste your Mailchimp embedded-form URL between the quotes below.
+     Find it at: Mailchimp → Audience → Signup forms → Embedded form.
+     In the code it gives you, copy the `action="..."` URL. It looks like:
+       https://inthegarden.us21.list-manage.com/subscribe/post?u=a1b2c3&id=d4e5f6
+     Pasting the whole <form ...> line also works — the URL is pulled out of it.
+     Until this is filled in, the form tells people to email us instead of
+     pretending it worked.                                                     */
+  var MAILCHIMP_ACTION = "";
+  /* ────────────────────────────────────────────────────────────────────── */
+
+  var form    = document.getElementById('garden-form');
+  var input   = document.getElementById('garden-email');
+  var again   = document.getElementById('garden-email-confirm');
+  var hp      = document.getElementById('garden-hp');
+  var button  = document.getElementById('garden-submit');
+  var confirm = document.getElementById('confirm');
+  if(!form) return;
+
+  var suggest = document.getElementById('suggest');
+
+  /* Drop the error styling as soon as someone starts correcting the field. */
+  [input, again].forEach(function(el){
+    el.addEventListener('input', function(){ el.removeAttribute('aria-invalid'); });
+  });
+
+  /* ── Typo catching ──────────────────────────────────────────────────────
+     A confirmation field only catches addresses mistyped two different ways.
+     It does nothing about "gmial.com", which people type identically twice.
+     So we also compare the domain against the providers our subscribers
+     actually use and offer a correction. This never blocks a signup — the
+     list is inevitably incomplete, and a real address must always get through.
+
+     This list doubles as a whitelist: an exact match returns early, so any real
+     domain sitting close to another entry must be listed or it gets "corrected"
+     into someone else's inbox. mail.com, ymail.com, aim.com and charter.com are
+     all one edit from an entry above and are all real — hence the second row. */
+  var POPULAR = ['gmail.com','yahoo.com','hotmail.com','outlook.com','aol.com',
+    'icloud.com','me.com','mac.com','live.com','msn.com','protonmail.com','proton.me',
+    'comcast.net','att.net','verizon.net','sbcglobal.net','charter.net','cox.net',
+    'tds.net','frontier.com','yahoo.co.uk','hotmail.co.uk','wisc.edu',
+    /* real domains near-identical to the above — listed so they are left alone */
+    'mail.com','ymail.com','aim.com','charter.com','googlemail.com','gmx.com',
+    'gmx.net','rocketmail.com'];
+
+  function distance(a, b){
+    var prev = [], curr = [], i, j;
+    for(j = 0; j <= b.length; j++) prev[j] = j;
+    for(i = 1; i <= a.length; i++){
+      curr[0] = i;
+      for(j = 1; j <= b.length; j++){
+        curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1,
+          prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+      }
+      for(j = 0; j <= b.length; j++) prev[j] = curr[j];
+    }
+    return prev[b.length];
+  }
+
+  function suggestionFor(email){
+    var at = email.lastIndexOf('@');
+    if(at < 1) return null;
+    var domain = email.slice(at + 1).toLowerCase();
+    if(!domain || POPULAR.indexOf(domain) !== -1) return null;
+    var best = null, bestD = 99;
+    for(var i = 0; i < POPULAR.length; i++){
+      var d = distance(domain, POPULAR[i]);
+      if(d < bestD){ bestD = d; best = POPULAR[i]; }
+    }
+    /* Longer domains tolerate a second slip; short ones would false-positive. */
+    var limit = domain.length > 8 ? 2 : 1;
+    return (bestD > 0 && bestD <= limit) ? email.slice(0, at + 1) + best : null;
+  }
+
+  var offeredFor = null;   /* the address we've already warned about */
+
+  function hideSuggestion(){
+    suggest.textContent = '';
+    suggest.classList.remove('is-visible');
+  }
+
+  function showSuggestion(fixed){
+    hideSuggestion();
+    suggest.appendChild(document.createTextNode('Did you mean '));
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = fixed;          /* textContent, never innerHTML — this is user input */
+    btn.addEventListener('click', function(){
+      input.value = fixed;
+      again.value = fixed;
+      input.removeAttribute('aria-invalid');
+      again.removeAttribute('aria-invalid');
+      hideSuggestion();
+      button.focus();
+    });
+    suggest.appendChild(btn);
+    suggest.appendChild(document.createTextNode('? Or press Join again to keep what you typed.'));
+    suggest.classList.add('is-visible');
+  }
+
+  input.addEventListener('input', hideSuggestion);
+  input.addEventListener('blur', function(){
+    var fixed = suggestionFor(input.value.trim());
+    if(fixed) showSuggestion(fixed);
+  });
+
+  /* Pasting the second address copies any typo straight past the check, so
+     the field is typed only. Autofill still works — that fires no paste event. */
+  ['paste', 'drop'].forEach(function(evt){
+    again.addEventListener(evt, function(e){
+      e.preventDefault();
+      say('Please type the second address out — pasting would copy any typo along with it.');
+      again.focus();
+    });
+  });
+
+  function parseAction(raw){
+    if(!raw) return null;
+    var m = String(raw).replace(/&amp;/g, '&')
+      .match(/https?:\/\/[^\s"'<>]*list-manage\.com\/subscribe\/post[^\s"'<>]*/i);
+    if(!m) return null;
+    try{
+      var url = new URL(m[0]);
+      var u  = url.searchParams.get('u');
+      var id = url.searchParams.get('id');
+      return (u && id) ? {origin:url.origin, u:u, id:id} : null;
+    }catch(e){ return null; }
+  }
+
+  var cfg = parseAction(MAILCHIMP_ACTION);
+  if(cfg){
+    /* Native fallback if this script ever fails before the handler binds. */
+    form.action = cfg.origin + '/subscribe/post';
+    hp.name = 'b_' + cfg.u + '_' + cfg.id;
+  }
+
+  function say(msg, isError){
+    confirm.textContent = msg;
+    confirm.classList.add('is-visible');
+    confirm.classList.toggle('is-error', !!isError);
+  }
+
+  function busy(on){
+    button.disabled = on;
+    button.textContent = on ? 'Joining…' : 'Join';
+  }
+
+  /* Mailchimp has no CORS headers, so we talk to it via JSONP and keep the
+     visitor on the page instead of bouncing them to a list-manage.com screen. */
+  function jsonp(url, onDone){
+    var cbName = 'mcCb' + Math.floor(Math.random() * 1e9);
+    var script = document.createElement('script');
+    var timer  = setTimeout(function(){ cleanup(); onDone(null); }, 12000);
+    function cleanup(){
+      clearTimeout(timer);
+      try{ delete window[cbName]; }catch(e){ window[cbName] = undefined; }
+      if(script.parentNode) script.parentNode.removeChild(script);
+    }
+    window[cbName] = function(data){ cleanup(); onDone(data); };
+    script.onerror = function(){ cleanup(); onDone(null); };
+    script.src = url + '&c=' + cbName;
+    document.body.appendChild(script);
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = input.value.trim();
+    if(!email || !input.checkValidity()){
+      say('That email doesn’t look quite right — mind checking it?', true);
+      input.setAttribute('aria-invalid', 'true');
+      input.focus();
+      return;
+    }
+    /* Case-insensitive: different capitalisation is not a typo worth blocking. */
+    if(email.toLowerCase() !== again.value.trim().toLowerCase()){
+      say('The two addresses don’t match — mind checking the second one?', true);
+      again.setAttribute('aria-invalid', 'true');
+      again.focus();
+      return;
+    }
+    /* Soft gate: pause once on a likely typo, then let the next press through.
+       Someone with an unusual but real address is never locked out. */
+    var fixed = suggestionFor(email);
+    if(fixed && offeredFor !== email){
+      offeredFor = email;
+      showSuggestion(fixed);
+      say('Just checking that address before we send it.');
+      return;
+    }
+    if(!cfg){
+      say('Signups aren’t switched on yet. Email marina@inthegarden.org and we’ll add you by hand.', true);
+      return;
+    }
+
+    busy(true);
+    var url = cfg.origin + '/subscribe/post-json'
+      + '?u='  + encodeURIComponent(cfg.u)
+      + '&id=' + encodeURIComponent(cfg.id)
+      + '&EMAIL=' + encodeURIComponent(email)
+      + '&b_' + cfg.u + '_' + cfg.id + '=' + encodeURIComponent(hp.value);
+
+    jsonp(url, function(data){
+      busy(false);
+      if(!data){
+        say('Something went wrong on our end. Try again, or email marina@inthegarden.org.', true);
+        return;
+      }
+      /* Mailchimp returns HTML inside msg; strip tags and its "0 - " prefix. */
+      var msg = String(data.msg || '').replace(/<[^>]*>/g, '').replace(/^\d+\s*-\s*/, '');
+      if(data.result === 'success'){
+        form.reset();
+        hideSuggestion();
+        offeredFor = null;
+        say(/confirm|almost finished/i.test(msg)
+          ? 'Almost there — check your inbox and click the confirmation link.'
+          : 'Welcome to the Garden — you’re in.');
+        return;
+      }
+      if(/already subscribed/i.test(msg)){
+        form.reset();
+        hideSuggestion();
+        offeredFor = null;
+        say('You’re already in the Garden — good to have you.');
+        return;
+      }
+      say(msg || 'That didn’t go through. Try again, or email marina@inthegarden.org.', true);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
